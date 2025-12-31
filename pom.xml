@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fengbiao</groupId>
+    <artifactId>freeswitch-esl-sdk</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <description>一个简洁、易用的 FreeSWITCH ESL (Event Socket Library) SDK，提供同步和异步客户端，简化与 FreeSWITCH
+        的交互。
+    </description>
+    <modules>
+        <module>freeswitch-esl-sdk-api</module>
+        <module>freeswitch-esl-sdk-core</module>
+        <module>freeswitch-esl-sdk-test</module>
+    </modules>
+
+    <properties>
+        <revision>1.0.0</revision>
+        <spring-boot.version>2.6.13</spring-boot.version>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fengbiao</groupId>
+                <artifactId>freeswitch-esl-sdk-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fengbiao</groupId>
+                <artifactId>freeswitch-esl-sdk-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
